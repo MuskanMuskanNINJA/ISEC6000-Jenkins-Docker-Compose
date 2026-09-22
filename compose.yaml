@@ -18,6 +18,9 @@ services:
       # Persists Docker images and other Docker data.
       - docker-data:/var/lib/docker
 
+ # Makes the Jenkins workspace available to Docker build agents.
+      - jenkins-data:/var/jenkins_home
+
   # Jenkins controller used to execute the CI/CD pipeline.
   jenkins:
     # Build our custom Jenkins image containing the Docker CLI.
